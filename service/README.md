@@ -112,6 +112,8 @@ docker run --name $ARTIFACT_ID -d -p 8081:8081 -e "SPRING_PROFILES_ACTIVE=develo
 
 - running nginx in front of spring app
 
+※ you have to do [`Build Image`](#build-image) step in advance 
+
 ```shell
 export ARTIFACT_ID=$(./mvnw org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate -Dexpression=project.artifactId -q -DforceStdout)
 
