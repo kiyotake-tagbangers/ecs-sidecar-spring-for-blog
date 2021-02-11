@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: reverse-proxy-nginx
+    build: ./reverse-proxy
+    image: reverse-proxy-nginx
+    ports:
+      - 80:80
+    depends_on:
+      - app
+  app:
+    image: $ARTIFACT_ID:$ARTIFACT_VERSION
+    container_name: $ARTIFACT_ID
+    ports:
+      - 8081:8081
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=development
